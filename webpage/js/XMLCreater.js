@@ -21,7 +21,7 @@ function writeXML(values) {
 
     XML.BeginNode("time");
 XML.Node("start-date", values["start-date"]); 
-XML.Node("end-date", values["end-date"]);  
+XML.Node("start-time", values["start-time"]);  
 	XML.EndNode();
 
     XML.Node("description", values["description"]);

@@ -6,25 +6,30 @@
 <meeting>
 <name>meeting#2</name>
 <venue>Ginger Restaurant, Bokaro Steel City</venue>
+<start-date>13/07/2017</start-date>
 <url>https://raw.githubusercontent.com/sujit0892/meeting/master/meeting-xml/meeting%232.xml</url>
 </meeting>
 <meeting>
 <name>meeting#3</name>
 <venue>Hotel Rajdoot,Bokaro Steel City</venue>
+<start-date>12/08/2017</start-date>
 <url>https://raw.githubusercontent.com/sujit0892/meeting/master/meeting-xml/meeting%233.xml</url>
 </meeting>
 <meeting>
 <name>meeting#4</name>
 <venue>Hotel Rajdoot, Chas, Bokaro Steel City</venue>
+<start-date>16/07/2017</start-date>
 <url>https://raw.githubusercontent.com/sujit0892/meeting/master/meeting-xml/meeting%234.xml</url>
 </meeting>
 <meeting>
 <name>meeting#5</name>
 <venue>Ginger Restaurant, Bokaro Steel City</venue>
+<start-date>13/07/2017</start-date>
 <url>https://raw.githubusercontent.com/sujit0892/meeting/master/meeting-xml/meeting%235.xml</url>
 </meeting>
 <meeting>
 <name>meeting#6</name>
 <venue>Hotel Rajdoot,Bokaro Steel City</venue>
+<start-date>12/08/2017</start-date>
 <url>https://raw.githubusercontent.com/sujit0892/meeting/master/meeting-xml/meeting%236.xml</url>
 </meeting>
