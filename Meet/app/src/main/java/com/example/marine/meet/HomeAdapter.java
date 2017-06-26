@@ -1,6 +1,7 @@
 package com.example.marine.meet;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +38,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, data.get(position).getName(), Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(context,Meetinfo.class);
+                context.startActivity(i);
             }
         });
 
