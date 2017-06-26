@@ -137,7 +137,7 @@ public class XMLparser extends AsyncTask<List<MeetingData>,Void,List<MeetingData
     protected void onPostExecute(List<MeetingData> meetingData)
     {    pdialog.dismiss();
 
-       
+
     }
 
 
