@@ -9,6 +9,8 @@ public class MeetingData {
     private String venue;
     private String date;
     private String url;
+    private String end_date;
+    private String description;
 
     public MeetingData(){
         this.name=null;
@@ -33,6 +35,8 @@ public class MeetingData {
     {
         return date;
     }
+    public String getEnd_date(){return end_date;}
+    public String getDescription(){ return description;}
     public void setName(String name)
     {
         this.name=name;
@@ -49,5 +53,7 @@ public class MeetingData {
     {
         this.date=date;
     }
+public void setEnd_date(String end_date){this.end_date=end_date;}
+    public void setDescription(String description){this.description=description;}
 }
 

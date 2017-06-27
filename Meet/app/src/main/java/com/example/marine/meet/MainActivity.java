@@ -13,6 +13,7 @@ import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity implements Constant{
   List<MeetingData> data;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements Constant{
 
         RecyclerView meetList=(RecyclerView)findViewById(R.id.meetList);
         meetList.setLayoutManager(new LinearLayoutManager(this));
-        HomeAdapter adapter=new HomeAdapter(MainActivity.this,data);
+        HomeAdapter adapter=new HomeAdapter(this,data);
         meetList.setAdapter(adapter);
 
 

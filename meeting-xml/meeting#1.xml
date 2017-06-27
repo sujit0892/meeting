@@ -1,1 +1,9 @@
-<meeting><name>meeting#1</name><venue>Hotel Rajdoot, Chas, Bokaro Steel City</venue><time><start-date>16/07/2017</start-date><end-date>12/08/2017</end-date></time><description>just a demo</description></meeting>
+<meeting>
+<name>meeting#1</name>
+<venue>Hotel Rajdoot, Chas, Bokaro Steel City</venue>
+<time>
+<start-date>16/07/2017</start-date>
+<end-date>12/08/2017</end-date>
+</time>
+<description>just a demo</description>
+</meeting>

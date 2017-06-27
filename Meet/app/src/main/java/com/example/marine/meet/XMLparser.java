@@ -124,6 +124,14 @@ public class XMLparser extends AsyncTask<List<MeetingData>,Void,List<MeetingData
                     {
                         meeting.setUrl(text);
                     }
+                    if(name.equals(END_DATE))
+                    {
+                        meeting.setEnd_date(text);
+                    }
+                    if(name.equals(DESCRIPTION_TAG))
+                    {
+                        meeting.setDescription(text);
+                    }
 
                     break;
             }
@@ -135,7 +143,7 @@ public class XMLparser extends AsyncTask<List<MeetingData>,Void,List<MeetingData
 
     @Override
     protected void onPostExecute(List<MeetingData> meetingData)
-    {    pdialog.dismiss();
+    {   pdialog.dismiss();
 
 
     }

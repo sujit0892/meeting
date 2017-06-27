@@ -1,8 +1,11 @@
 package com.example.marine.meet;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +21,7 @@ import java.util.List;
 public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
     List<MeetingData> data=new ArrayList<MeetingData>();
     Context context;
+    List<MeetingData> data1;
 
     public HomeAdapter(Context context, List<MeetingData> data){
         this.data= data;
@@ -38,8 +42,15 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String url=data.get(position).getUrl();
+              //XMLparser x= new XMLparser(context,url);
+                //data1= (List<MeetingData>) x.execute();
+                //Toast.makeText(context, data1.get(0).getName(), Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(context,Meetinfo.class);
+                i.putExtra("url",url);
                 context.startActivity(i);
+
             }
         });
 
