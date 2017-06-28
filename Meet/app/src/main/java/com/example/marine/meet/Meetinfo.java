@@ -1,61 +1,49 @@
 package com.example.marine.meet;
 
 import android.content.Intent;
+import android.provider.CalendarContract;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class Meetinfo extends AppCompatActivity implements TabLayout.OnTabSelectedListener {
-    ViewPager pager;
-    TabLayout tabLayout;
+public class Meetinfo extends AppCompatActivity  {
+   TextView description,start,venue,end;
     List<MeetingData> data;
       @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_meetinfo);
-       Intent i=getIntent();
-        String url=i.getStringExtra("url");
-        Toast.makeText(this,url, Toast.LENGTH_SHORT).show();
+          super.onCreate(savedInstanceState);
+          setContentView(R.layout.activity_meetinfo);
+          Intent i = getIntent();
+          String url = i.getStringExtra("url");
 
-        try {
-            data= new XMLparser(this,url).execute().get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-       Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        tabLayout= (TabLayout) findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("About"));
-        tabLayout.addTab(tabLayout.newTab().setText("Venue"));
-        tabLayout.setTabGravity(tabLayout.GRAVITY_FILL);
-        pager= (ViewPager) findViewById(R.id.pager);
-        tabAdapter adapter=new tabAdapter(data,getSupportFragmentManager(),tabLayout.getTabCount());
-        pager.setAdapter(adapter);
 
-    }
+          try {
+              data = new XMLparser(this, url).execute().get();
+          } catch (InterruptedException e) {
+              e.printStackTrace();
+          } catch (ExecutionException e) {
+              e.printStackTrace();
+          }
+          setTitle(data.get(0).getName());
+          description= (TextView) findViewById(R.id.Description);
+          venue= (TextView) findViewById(R.id.venue);
+          start= (TextView) findViewById(R.id.start);
+          end= (TextView) findViewById(R.id.end);
+          description.setText(data.get(0).getDescription());
+          venue.setText(data.get(0).getVenue());
+          start.setText("start date"+data.get(0).getDate());
+          end.setText("end date"+data.get(0).getEnd_date());
 
-    @Override
-    public void onTabSelected(TabLayout.Tab tab) {
-        pager.setCurrentItem(tab.getPosition());
-    }
 
-    @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
 
-    }
-
-    @Override
-    public void onTabReselected(TabLayout.Tab tab) {
-
-    }
-
+      }
 }
